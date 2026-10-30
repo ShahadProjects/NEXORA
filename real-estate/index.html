@@ -4,536 +4,423 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEXORA ESTATE | عقارات فاخرة</title>
+<title>NEXORA | العقارات الفاخرة</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  --gold: #d6b477;
+  --bg: #090b0f;
+  --card: #12151c;
+  --muted: #969ba7;
+  --white: #f5f3ef;
 }
-
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
 body {
-  font-family: 'Cairo', sans-serif;
-  background: #090a0d;
-  color: #fff;
+  font-family:'Cairo',sans-serif;
+  background:var(--bg);
+  color:var(--white);
 }
+a { text-decoration:none; color:inherit; }
+button,input,select { font-family:inherit; }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 22px 8%;
-  border-bottom: 1px solid #292929;
+nav {
+  height:85px;
+  padding:0 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #ffffff12;
+  position:sticky;
+  top:0;
+  background:#090b0fee;
+  backdrop-filter:blur(15px);
+  z-index:10;
 }
-
-.logo {
-  font-size: 26px;
-  font-weight: 800;
-  direction: ltr;
-}
-
-.logo span {
-  color: #c9a76b;
-}
-
-nav a {
-  color: #ccc;
-  text-decoration: none;
-  margin-right: 22px;
-  font-size: 14px;
-}
-
-nav a:hover {
-  color: #c9a76b;
+.logo { font-size:27px; font-weight:900; letter-spacing:3px; }
+.logo span { color:var(--gold); }
+.nav-links { display:flex; gap:32px; color:#c4c5ca; font-size:14px; }
+.nav-links a:hover { color:var(--gold); }
+.nav-button {
+  border:1px solid var(--gold);
+  color:var(--gold);
+  padding:10px 23px;
+  border-radius:5px;
+  font-size:13px;
 }
 
 .hero {
-  min-height: 440px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 60px 20px;
+  min-height:650px;
+  padding:100px 8%;
+  display:flex;
+  align-items:center;
   background:
-    linear-gradient(#090a0dcc,#090a0ddd),
-    url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600')
-    center/cover;
+  linear-gradient(90deg,#090b0f 5%,#090b0fbf 48%,#090b0f50),
+  url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1800') center/cover;
 }
-
-.tag {
-  color: #d9b77d;
-  letter-spacing: 3px;
-  font-size: 12px;
+.hero-content { max-width:650px; }
+.eyebrow {
+  color:var(--gold);
+  font-size:13px;
+  letter-spacing:2px;
+  margin-bottom:20px;
 }
-
 .hero h1 {
-  font-size: clamp(35px,6vw,60px);
-  margin: 20px 0;
+  font-size:clamp(38px,6vw,68px);
+  line-height:1.45;
+  font-weight:800;
+  margin-bottom:20px;
 }
-
-.hero h1 span {
-  color: #c9a76b;
-}
-
+.hero h1 span { color:var(--gold); }
 .hero p {
-  color: #d0d0d0;
-  max-width: 580px;
-  line-height: 2;
+  color:#c1c2c7;
+  line-height:2.1;
+  max-width:540px;
+  margin-bottom:32px;
 }
+.gold-btn {
+  display:inline-block;
+  background:var(--gold);
+  color:#101115;
+  padding:14px 32px;
+  border-radius:4px;
+  font-weight:800;
+  transition:.3s;
+}
+.gold-btn:hover { background:#f0d49e; transform:translateY(-3px); }
 
-.search {
-  display: flex;
-  gap: 10px;
-  margin-top: 30px;
-  width: min(600px,95%);
+.stats {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  padding:35px 8%;
+  background:#101319;
+  border-bottom:1px solid #ffffff12;
 }
+.stat { text-align:center; }
+.stat strong { display:block; font-size:27px; color:var(--gold); }
+.stat span { font-size:13px; color:var(--muted); }
 
-.search input {
-  flex: 1;
-  min-width: 0;
-  padding: 15px;
-  border: 1px solid #555;
-  border-radius: 8px;
-  background: #15161b;
-  color: white;
-  font-family: inherit;
+section { padding:85px 8%; }
+.section-top {
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  margin-bottom:35px;
+  gap:20px;
 }
-
-.search button {
-  padding: 12px 22px;
-  border: 0;
-  border-radius: 8px;
-  background: #c9a76b;
-  color: #111;
-  font-family: inherit;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.section {
-  padding: 65px 8%;
-}
-
-.heading {
-  text-align: center;
-  margin-bottom: 35px;
-}
-
-.heading h2 {
-  font-size: 32px;
-}
-
-.heading p {
-  color: #999;
-  margin-top: 8px;
-}
+.section-top h2 { font-size:34px; }
+.section-top p { color:var(--muted); font-size:14px; margin-top:8px; }
+.gold { color:var(--gold); }
 
 .filters {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 35px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-bottom:30px;
 }
-
-.filters button {
-  background: #17181d;
-  color: #ddd;
-  border: 1px solid #333;
-  padding: 10px 23px;
-  border-radius: 25px;
-  font-family: inherit;
-  cursor: pointer;
+.filters input,.filters select {
+  background:var(--card);
+  border:1px solid #ffffff1c;
+  color:white;
+  padding:13px 17px;
+  border-radius:5px;
+  outline:none;
+  min-width:150px;
 }
+.filters input { flex:1; }
+.filters select option { background:#12151c; }
+.filters input:focus,.filters select:focus { border-color:var(--gold); }
 
-.filters button.active,
-.filters button:hover {
-  background: #c9a76b;
-  color: #111;
-  border-color: #c9a76b;
+.cards {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
 }
-
-.properties {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 25px;
+.card {
+  background:var(--card);
+  border:1px solid #ffffff12;
+  border-radius:8px;
+  overflow:hidden;
+  transition:.3s;
 }
-
-.property {
-  background: #15161b;
-  border: 1px solid #292929;
-  border-radius: 13px;
-  overflow: hidden;
-  transition: .3s;
+.card:hover {
+  transform:translateY(-7px);
+  border-color:#d6b47770;
 }
-
-.property:hover {
-  transform: translateY(-7px);
-  border-color: #c9a76b;
+.card-image { height:230px; position:relative; overflow:hidden; }
+.card-image img {
+  width:100%; height:100%; object-fit:cover;
+  transition:.5s;
 }
-
-.property img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
+.card:hover img { transform:scale(1.06); }
+.tag {
+  position:absolute; top:15px; right:15px;
+  background:var(--gold); color:#111;
+  padding:5px 13px; font-size:12px;
+  border-radius:3px; font-weight:700;
 }
-
-.info {
-  padding: 20px;
-}
-
-.type {
-  color: #c9a76b;
-  font-size: 12px;
-}
-
-.info h3 {
-  margin: 9px 0;
-  font-size: 21px;
-}
-
-.location {
-  color: #aaa;
-  font-size: 13px;
-}
-
-.price {
-  color: #d9b77d;
-  font-size: 20px;
-  font-weight: bold;
-  margin: 18px 0;
-}
-
+.card-body { padding:20px; }
+.card-body h3 { font-size:19px; margin-bottom:8px; }
+.location { color:var(--muted); font-size:13px; margin-bottom:18px; }
 .details {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #c9a76b;
-  border-radius: 7px;
-  background: transparent;
-  color: #c9a76b;
-  font-family: inherit;
-  cursor: pointer;
+  display:flex; justify-content:space-between;
+  color:#b9bbc4; font-size:12px;
+  padding:14px 0; border-top:1px solid #ffffff15;
 }
+.price { color:var(--gold); font-size:20px; font-weight:800; }
+.price small { font-size:11px; color:var(--muted); font-weight:400; }
 
-.details:hover {
-  background: #c9a76b;
-  color: #111;
-}
-
-.empty {
-  display: none;
-  text-align: center;
-  color: #aaa;
-  padding: 40px;
+.no-results {
+  display:none;
+  text-align:center;
+  color:var(--muted);
+  padding:50px;
 }
 
 .about {
-  background: #121319;
-  text-align: center;
-  padding: 60px 10%;
+  background:#11151c;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
 }
+.about img { width:100%; height:380px; object-fit:cover; border-radius:7px; }
+.about h2 { font-size:36px; margin-bottom:20px; }
+.about p { color:#b9bbc4; line-height:2.2; margin-bottom:25px; }
 
-.about h2 {
-  color: #c9a76b;
-  margin-bottom: 15px;
-}
-
-.about p {
-  color: #aaa;
-  line-height: 2;
-}
-
+.contact { text-align:center; }
+.contact h2 { font-size:35px; margin-bottom:15px; }
+.contact p { color:var(--muted); margin-bottom:30px; }
 footer {
-  text-align: center;
-  padding: 30px;
-  color: #888;
-  border-top: 1px solid #292929;
-}
-
-dialog {
-  margin: auto;
-  width: min(450px,90%);
-  background: #191a20;
-  color: white;
-  border: 1px solid #c9a76b;
-  border-radius: 14px;
-  padding: 25px;
-  font-family: inherit;
-}
-
-dialog::backdrop {
-  background: #000b;
-}
-
-dialog h2 {
-  color: #d9b77d;
-  margin-bottom: 12px;
-}
-
-dialog p {
-  color: #ccc;
-  line-height: 2;
-  margin-bottom: 15px;
-}
-
-.close {
-  background: #c9a76b;
-  color: #111;
-  border: 0;
-  padding: 10px 25px;
-  border-radius: 7px;
-  font-family: inherit;
-  cursor: pointer;
+  padding:30px 8%;
+  border-top:1px solid #ffffff15;
+  display:flex;
+  justify-content:space-between;
+  color:var(--muted);
+  font-size:12px;
+  gap:15px;
+  flex-wrap:wrap;
 }
 
 @media(max-width:850px) {
-  .properties {
-    grid-template-columns: repeat(2,1fr);
-  }
+  .cards { grid-template-columns:repeat(2,1fr); }
+  .about { grid-template-columns:1fr; }
+  .nav-links { gap:12px; font-size:12px; }
 }
-
 @media(max-width:550px) {
-  header {
-    flex-direction: column;
-    gap: 15px;
-  }
-  nav a {
-    margin: 0 7px;
-  }
-  .properties {
-    grid-template-columns: 1fr;
-  }
-  .search {
-    flex-direction: column;
-  }
+  nav { padding:0 5%; height:70px; }
+  .logo { font-size:22px; }
+  .nav-links { display:none; }
+  .nav-button { padding:8px 12px; }
+  .hero { min-height:570px; padding:70px 6%; }
+  section { padding:65px 6%; }
+  .cards { grid-template-columns:1fr; }
+  .stats { padding:25px 3%; gap:5px; }
+  .stat strong { font-size:21px; }
+  .stat span { font-size:11px; }
+  .section-top h2 { font-size:27px; }
+  .about img { height:250px; }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">NEXORA<span>.</span></div>
-  <nav>
+<nav>
+  <a href="#" class="logo">NEX<span>O</span>RA.</a>
+  <div class="nav-links">
     <a href="#">الرئيسية</a>
     <a href="#properties">العقارات</a>
     <a href="#about">من نحن</a>
-  </nav>
+    <a href="#contact">تواصل معنا</a>
+  </div>
+  <a href="#properties" class="nav-button">اكتشف العقارات</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">NEXORA REAL ESTATE · 2026</div>
+    <h1>اكتشف منزلك<br>بأسلوب <span>استثنائي</span></h1>
+    <p>
+      عالم من العقارات الفاخرة يجمع بين التصميم الراقي
+      والمواقع الاستثنائية. اكتشف المكان الذي يستحق أن تسميه منزلك.
+    </p>
+    <a href="#properties" class="gold-btn">استكشف العقارات ←</a>
+  </div>
 </header>
 
-<section class="hero">
-  <span class="tag">NEXORA REAL ESTATE</span>
+<div class="stats">
+  <div class="stat"><strong>+120</strong><span>عقار مميز</span></div>
+  <div class="stat"><strong>+35</strong><span>موقعاً مميزاً</span></div>
+  <div class="stat"><strong>+500</strong><span>عميل سعيد</span></div>
+</div>
 
-  <h1>اكتشف منزلك <span>المثالي</span></h1>
-
-  <p>
-    اكتشف مجموعة من العقارات المميزة.
-    فلل وشقق سكنية بتصاميم عصرية
-    وتجربة بحث سهلة وأنيقة.
-  </p>
-
-  <div class="search">
-    <input id="searchInput"
-      type="text"
-      placeholder="ابحث عن عقار أو مدينة...">
-    <button onclick="searchProperties()">بحث</button>
-  </div>
-</section>
-
-<section class="section" id="properties">
-
-  <div class="heading">
-    <h2>العقارات المميزة</h2>
-    <p>اكتشف مجموعة مختارة من العقارات</p>
+<section id="properties">
+  <div class="section-top">
+    <div>
+      <div class="eyebrow">OUR COLLECTION</div>
+      <h2>عقارات <span class="gold">مختارة</span></h2>
+      <p>اكتشف مجموعة من العقارات التي تناسب طموحاتك.</p>
+    </div>
   </div>
 
   <div class="filters">
-    <button class="active" data-filter="all">الكل</button>
-    <button data-filter="villa">فلل</button>
-    <button data-filter="apartment">شقق</button>
-    <button data-filter="land">أراضي</button>
+    <input type="search" id="search" placeholder="ابحث عن عقار أو مدينة...">
+    <select id="type">
+      <option value="all">جميع العقارات</option>
+      <option value="villa">فلل</option>
+      <option value="apartment">شقق</option>
+      <option value="house">منازل</option>
+    </select>
+    <select id="city">
+      <option value="all">جميع المدن</option>
+      <option value="الرياض">الرياض</option>
+      <option value="جدة">جدة</option>
+      <option value="الدمام">الدمام</option>
+    </select>
   </div>
 
-  <div class="properties">
+  <div class="cards" id="cards">
 
-    <article class="property" data-type="villa"
-      data-name="فيلا فاخرة الرياض">
-      <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800" alt="فيلا فاخرة">
-      <div class="info">
-        <span class="type">فيلا سكنية</span>
-        <h3>فيلا فاخرة</h3>
-        <p class="location">📍 الرياض - حي النرجس</p>
-        <div class="price">2,500,000 ريال</div>
-        <button class="details"
-          onclick="showDetails('فيلا فاخرة','فيلا واسعة بتصميم عصري وحديقة خاصة. السعر: 2,500,000 ريال. الموقع: الرياض - حي النرجس.')">
-          عرض التفاصيل
-        </button>
+    <article class="card" data-type="villa" data-city="الرياض">
+      <div class="card-image">
+        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800" alt="فيلا فاخرة">
+        <span class="tag">للبيع</span>
+      </div>
+      <div class="card-body">
+        <h3>فيلا النخبة الفاخرة</h3>
+        <div class="location">⌖ الرياض · حي الياسمين</div>
+        <div class="details"><span>5 غرف نوم</span><span>450 م²</span><span>3 حمامات</span></div>
+        <div class="price">3,500,000 <small>ريال سعودي</small></div>
       </div>
     </article>
 
-    <article class="property" data-type="apartment"
-      data-name="شقة عصرية جدة">
-      <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800" alt="شقة عصرية">
-      <div class="info">
-        <span class="type">شقة سكنية</span>
-        <h3>شقة عصرية</h3>
-        <p class="location">📍 جدة - حي الشاطئ</p>
-        <div class="price">850,000 ريال</div>
-        <button class="details"
-          onclick="showDetails('شقة عصرية','شقة بتصميم أنيق ومساحات مريحة. السعر: 850,000 ريال. الموقع: جدة - حي الشاطئ.')">
-          عرض التفاصيل
-        </button>
+    <article class="card" data-type="apartment" data-city="جدة">
+      <div class="card-image">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800" alt="شقة عصرية">
+        <span class="tag">للإيجار</span>
+      </div>
+      <div class="card-body">
+        <h3>شقة بإطلالة بحرية</h3>
+        <div class="location">⌖ جدة · الواجهة البحرية</div>
+        <div class="details"><span>3 غرف نوم</span><span>180 م²</span><span>2 حمام</span></div>
+        <div class="price">85,000 <small>ريال سنوياً</small></div>
       </div>
     </article>
 
-    <article class="property" data-type="villa"
-      data-name="فيلا مودرن الرياض">
-      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800" alt="فيلا مودرن">
-      <div class="info">
-        <span class="type">فيلا سكنية</span>
-        <h3>فيلا مودرن</h3>
-        <p class="location">📍 الرياض - حي الياسمين</p>
-        <div class="price">3,200,000 ريال</div>
-        <button class="details"
-          onclick="showDetails('فيلا مودرن','فيلا بتصميم معماري حديث ومساحات واسعة. السعر: 3,200,000 ريال. الموقع: الرياض - حي الياسمين.')">
-          عرض التفاصيل
-        </button>
+    <article class="card" data-type="villa" data-city="الدمام">
+      <div class="card-image">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800" alt="فيلا حديثة">
+        <span class="tag">للبيع</span>
+      </div>
+      <div class="card-body">
+        <h3>فيلا التصميم الحديث</h3>
+        <div class="location">⌖ الدمام · حي الشاطئ</div>
+        <div class="details"><span>6 غرف نوم</span><span>520 م²</span><span>4 حمامات</span></div>
+        <div class="price">2,800,000 <small>ريال سعودي</small></div>
       </div>
     </article>
 
-    <article class="property" data-type="apartment"
-      data-name="شقة فاخرة مكة">
-      <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800" alt="شقة فاخرة">
-      <div class="info">
-        <span class="type">شقة سكنية</span>
-        <h3>شقة فاخرة</h3>
-        <p class="location">📍 مكة - حي العزيزية</p>
-        <div class="price">650,000 ريال</div>
-        <button class="details"
-          onclick="showDetails('شقة فاخرة','شقة بتصميم داخلي فاخر. السعر: 650,000 ريال. الموقع: مكة - حي العزيزية.')">
-          عرض التفاصيل
-        </button>
+    <article class="card" data-type="apartment" data-city="الرياض">
+      <div class="card-image">
+        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800" alt="شقة راقية">
+        <span class="tag">للبيع</span>
+      </div>
+      <div class="card-body">
+        <h3>شقة النخبة العصرية</h3>
+        <div class="location">⌖ الرياض · حي الملقا</div>
+        <div class="details"><span>3 غرف نوم</span><span>200 م²</span><span>3 حمامات</span></div>
+        <div class="price">1,200,000 <small>ريال سعودي</small></div>
       </div>
     </article>
 
-    <article class="property" data-type="land"
-      data-name="أرض سكنية الرياض">
-      <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800" alt="أرض">
-      <div class="info">
-        <span class="type">أرض سكنية</span>
-        <h3>أرض سكنية</h3>
-        <p class="location">📍 الرياض - حي الرمال</p>
-        <div class="price">900,000 ريال</div>
-        <button class="details"
-          onclick="showDetails('أرض سكنية','أرض افتراضية مناسبة للتطوير السكني. السعر: 900,000 ريال. الموقع: الرياض - حي الرمال.')">
-          عرض التفاصيل
-        </button>
+    <article class="card" data-type="house" data-city="جدة">
+      <div class="card-image">
+        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800" alt="منزل فاخر">
+        <span class="tag">للبيع</span>
+      </div>
+      <div class="card-body">
+        <h3>منزل العائلة الراقي</h3>
+        <div class="location">⌖ جدة · حي أبحر</div>
+        <div class="details"><span>4 غرف نوم</span><span>320 م²</span><span>3 حمامات</span></div>
+        <div class="price">1,950,000 <small>ريال سعودي</small></div>
       </div>
     </article>
 
-    <article class="property" data-type="villa"
-      data-name="فيلا عائلية الدمام">
-      <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800" alt="فيلا عائلية">
-      <div class="info">
-        <span class="type">فيلا سكنية</span>
-        <h3>فيلا عائلية</h3>
-        <p class="location">📍 الدمام - حي الشاطئ</p>
-        <div class="price">1,800,000 ريال</div>
-        <button class="details"
-          onclick="showDetails('فيلا عائلية','فيلا عائلية افتراضية بمساحات واسعة. السعر: 1,800,000 ريال. الموقع: الدمام - حي الشاطئ.')">
-          عرض التفاصيل
-        </button>
+    <article class="card" data-type="villa" data-city="الرياض">
+      <div class="card-image">
+        <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800" alt="قصر فاخر">
+        <span class="tag">للبيع</span>
+      </div>
+      <div class="card-body">
+        <h3>قصر الإقامة الملكية</h3>
+        <div class="location">⌖ الرياض · حي حطين</div>
+        <div class="details"><span>7 غرف نوم</span><span>800 م²</span><span>5 حمامات</span></div>
+        <div class="price">6,000,000 <small>ريال سعودي</small></div>
       </div>
     </article>
 
   </div>
-
-  <div class="empty" id="empty">
-    لا توجد عقارات تطابق بحثك.
-  </div>
-
+  <div class="no-results" id="empty">لا توجد عقارات مطابقة لبحثك.</div>
 </section>
 
 <section class="about" id="about">
-  <h2>عن NEXORA ESTATE</h2>
-  <p>
-    تجربة عقارية رقمية تجمع بين التصميم
-    العصري وسهولة استكشاف العقارات.
-    اكتشف خياراتك وابدأ رحلة البحث عن منزلك.
-  </p>
+  <div>
+    <div class="eyebrow">ABOUT NEXORA</div>
+    <h2>نحن نصنع تجربة<br><span class="gold">عقارية مختلفة</span></h2>
+    <p>
+      NEXORA منصة عقارية عصرية تهدف إلى جعل اكتشاف العقارات
+      تجربة سهلة وأنيقة. نجمع بين التقنية والتصميم لنقربك
+      من المكان الذي تحلم به.
+    </p>
+    <a href="#properties" class="gold-btn">اكتشف مجموعتنا</a>
+  </div>
+  <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=900" alt="تصميم داخلي فاخر">
+</section>
+
+<section class="contact" id="contact">
+  <div class="eyebrow">GET IN TOUCH</div>
+  <h2>هل تبحث عن <span class="gold">عقارك القادم؟</span></h2>
+  <p>ابدأ رحلتك لاكتشاف العقار المناسب لك.</p>
+  <a href="#properties" class="gold-btn">ابدأ الاستكشاف</a>
 </section>
 
 <footer>
-  <div class="logo">NEXORA<span>.</span></div>
-  <p>© 2026 NEXORA ESTATE - جميع الحقوق محفوظة</p>
-  <p>الأسعار والعقارات المعروضة نماذج تجريبية للتصميم.</p>
+  <div class="logo">NEX<span>O</span>RA.</div>
+  <div>© 2026 NEXORA. جميع الحقوق محفوظة.</div>
+  <div>Designed with ambition.</div>
 </footer>
 
-<dialog id="detailsDialog">
-  <h2 id="dialogTitle"></h2>
-  <p id="dialogText"></p>
-  <button class="close"
-    onclick="document.getElementById('detailsDialog').close()">
-    إغلاق
-  </button>
-</dialog>
-
 <script>
-const cards = document.querySelectorAll('.property');
-const filterButtons = document.querySelectorAll('.filters button');
-const searchInput = document.getElementById('searchInput');
+const search = document.getElementById('search');
+const type = document.getElementById('type');
+const city = document.getElementById('city');
+const cards = document.querySelectorAll('.card');
 const empty = document.getElementById('empty');
 
-let currentFilter = 'all';
-
-function updateProperties() {
-  const query = searchInput.value.trim().toLowerCase();
-  let count = 0;
+function filterProperties() {
+  const query = search.value.trim().toLowerCase();
+  let visible = 0;
 
   cards.forEach(card => {
-    const matchesFilter =
-      currentFilter === 'all' ||
-      card.dataset.type === currentFilter;
+    const matchesText = card.innerText.toLowerCase().includes(query);
+    const matchesType = type.value === 'all' || card.dataset.type === type.value;
+    const matchesCity = city.value === 'all' || card.dataset.city === city.value;
 
-    const matchesSearch =
-      card.dataset.name.toLowerCase().includes(query);
+    const show = matchesText && matchesType && matchesCity;
+    card.style.display = show ? 'block' : 'none';
 
-    const visible = matchesFilter && matchesSearch;
-
-    card.style.display = visible ? 'block' : 'none';
-
-    if (visible) count++;
+    if (show) visible++;
   });
 
-  empty.style.display = count === 0 ? 'block' : 'none';
+  empty.style.display = visible ? 'none' : 'block';
 }
 
-filterButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    filterButtons.forEach(b => b.classList.remove('active'));
-
-    button.classList.add('active');
-    currentFilter = button.dataset.filter;
-
-    updateProperties();
-  });
-});
-
-function searchProperties() {
-  updateProperties();
-}
-
-searchInput.addEventListener('input', updateProperties);
-
-function showDetails(title, text) {
-  document.getElementById('dialogTitle').textContent = title;
-  document.getElementById('dialogText').textContent = text;
-  document.getElementById('detailsDialog').showModal();
-}
+search.addEventListener('input', filterProperties);
+type.addEventListener('change', filterProperties);
+city.addEventListener('change', filterProperties);
 </script>
 
 </body>

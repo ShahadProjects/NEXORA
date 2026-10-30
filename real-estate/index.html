@@ -1,0 +1,540 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXORA ESTATE | عقارات فاخرة</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background: #090a0d;
+  color: #fff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 8%;
+  border-bottom: 1px solid #292929;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 800;
+  direction: ltr;
+}
+
+.logo span {
+  color: #c9a76b;
+}
+
+nav a {
+  color: #ccc;
+  text-decoration: none;
+  margin-right: 22px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #c9a76b;
+}
+
+.hero {
+  min-height: 440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px;
+  background:
+    linear-gradient(#090a0dcc,#090a0ddd),
+    url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600')
+    center/cover;
+}
+
+.tag {
+  color: #d9b77d;
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+
+.hero h1 {
+  font-size: clamp(35px,6vw,60px);
+  margin: 20px 0;
+}
+
+.hero h1 span {
+  color: #c9a76b;
+}
+
+.hero p {
+  color: #d0d0d0;
+  max-width: 580px;
+  line-height: 2;
+}
+
+.search {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+  width: min(600px,95%);
+}
+
+.search input {
+  flex: 1;
+  min-width: 0;
+  padding: 15px;
+  border: 1px solid #555;
+  border-radius: 8px;
+  background: #15161b;
+  color: white;
+  font-family: inherit;
+}
+
+.search button {
+  padding: 12px 22px;
+  border: 0;
+  border-radius: 8px;
+  background: #c9a76b;
+  color: #111;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.section {
+  padding: 65px 8%;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.heading h2 {
+  font-size: 32px;
+}
+
+.heading p {
+  color: #999;
+  margin-top: 8px;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 35px;
+}
+
+.filters button {
+  background: #17181d;
+  color: #ddd;
+  border: 1px solid #333;
+  padding: 10px 23px;
+  border-radius: 25px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.filters button.active,
+.filters button:hover {
+  background: #c9a76b;
+  color: #111;
+  border-color: #c9a76b;
+}
+
+.properties {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 25px;
+}
+
+.property {
+  background: #15161b;
+  border: 1px solid #292929;
+  border-radius: 13px;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.property:hover {
+  transform: translateY(-7px);
+  border-color: #c9a76b;
+}
+
+.property img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.info {
+  padding: 20px;
+}
+
+.type {
+  color: #c9a76b;
+  font-size: 12px;
+}
+
+.info h3 {
+  margin: 9px 0;
+  font-size: 21px;
+}
+
+.location {
+  color: #aaa;
+  font-size: 13px;
+}
+
+.price {
+  color: #d9b77d;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 18px 0;
+}
+
+.details {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #c9a76b;
+  border-radius: 7px;
+  background: transparent;
+  color: #c9a76b;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.details:hover {
+  background: #c9a76b;
+  color: #111;
+}
+
+.empty {
+  display: none;
+  text-align: center;
+  color: #aaa;
+  padding: 40px;
+}
+
+.about {
+  background: #121319;
+  text-align: center;
+  padding: 60px 10%;
+}
+
+.about h2 {
+  color: #c9a76b;
+  margin-bottom: 15px;
+}
+
+.about p {
+  color: #aaa;
+  line-height: 2;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #888;
+  border-top: 1px solid #292929;
+}
+
+dialog {
+  margin: auto;
+  width: min(450px,90%);
+  background: #191a20;
+  color: white;
+  border: 1px solid #c9a76b;
+  border-radius: 14px;
+  padding: 25px;
+  font-family: inherit;
+}
+
+dialog::backdrop {
+  background: #000b;
+}
+
+dialog h2 {
+  color: #d9b77d;
+  margin-bottom: 12px;
+}
+
+dialog p {
+  color: #ccc;
+  line-height: 2;
+  margin-bottom: 15px;
+}
+
+.close {
+  background: #c9a76b;
+  color: #111;
+  border: 0;
+  padding: 10px 25px;
+  border-radius: 7px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+@media(max-width:850px) {
+  .properties {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media(max-width:550px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+  nav a {
+    margin: 0 7px;
+  }
+  .properties {
+    grid-template-columns: 1fr;
+  }
+  .search {
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">NEXORA<span>.</span></div>
+  <nav>
+    <a href="#">الرئيسية</a>
+    <a href="#properties">العقارات</a>
+    <a href="#about">من نحن</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <span class="tag">NEXORA REAL ESTATE</span>
+
+  <h1>اكتشف منزلك <span>المثالي</span></h1>
+
+  <p>
+    اكتشف مجموعة من العقارات المميزة.
+    فلل وشقق سكنية بتصاميم عصرية
+    وتجربة بحث سهلة وأنيقة.
+  </p>
+
+  <div class="search">
+    <input id="searchInput"
+      type="text"
+      placeholder="ابحث عن عقار أو مدينة...">
+    <button onclick="searchProperties()">بحث</button>
+  </div>
+</section>
+
+<section class="section" id="properties">
+
+  <div class="heading">
+    <h2>العقارات المميزة</h2>
+    <p>اكتشف مجموعة مختارة من العقارات</p>
+  </div>
+
+  <div class="filters">
+    <button class="active" data-filter="all">الكل</button>
+    <button data-filter="villa">فلل</button>
+    <button data-filter="apartment">شقق</button>
+    <button data-filter="land">أراضي</button>
+  </div>
+
+  <div class="properties">
+
+    <article class="property" data-type="villa"
+      data-name="فيلا فاخرة الرياض">
+      <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800" alt="فيلا فاخرة">
+      <div class="info">
+        <span class="type">فيلا سكنية</span>
+        <h3>فيلا فاخرة</h3>
+        <p class="location">📍 الرياض - حي النرجس</p>
+        <div class="price">2,500,000 ريال</div>
+        <button class="details"
+          onclick="showDetails('فيلا فاخرة','فيلا واسعة بتصميم عصري وحديقة خاصة. السعر: 2,500,000 ريال. الموقع: الرياض - حي النرجس.')">
+          عرض التفاصيل
+        </button>
+      </div>
+    </article>
+
+    <article class="property" data-type="apartment"
+      data-name="شقة عصرية جدة">
+      <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800" alt="شقة عصرية">
+      <div class="info">
+        <span class="type">شقة سكنية</span>
+        <h3>شقة عصرية</h3>
+        <p class="location">📍 جدة - حي الشاطئ</p>
+        <div class="price">850,000 ريال</div>
+        <button class="details"
+          onclick="showDetails('شقة عصرية','شقة بتصميم أنيق ومساحات مريحة. السعر: 850,000 ريال. الموقع: جدة - حي الشاطئ.')">
+          عرض التفاصيل
+        </button>
+      </div>
+    </article>
+
+    <article class="property" data-type="villa"
+      data-name="فيلا مودرن الرياض">
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800" alt="فيلا مودرن">
+      <div class="info">
+        <span class="type">فيلا سكنية</span>
+        <h3>فيلا مودرن</h3>
+        <p class="location">📍 الرياض - حي الياسمين</p>
+        <div class="price">3,200,000 ريال</div>
+        <button class="details"
+          onclick="showDetails('فيلا مودرن','فيلا بتصميم معماري حديث ومساحات واسعة. السعر: 3,200,000 ريال. الموقع: الرياض - حي الياسمين.')">
+          عرض التفاصيل
+        </button>
+      </div>
+    </article>
+
+    <article class="property" data-type="apartment"
+      data-name="شقة فاخرة مكة">
+      <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800" alt="شقة فاخرة">
+      <div class="info">
+        <span class="type">شقة سكنية</span>
+        <h3>شقة فاخرة</h3>
+        <p class="location">📍 مكة - حي العزيزية</p>
+        <div class="price">650,000 ريال</div>
+        <button class="details"
+          onclick="showDetails('شقة فاخرة','شقة بتصميم داخلي فاخر. السعر: 650,000 ريال. الموقع: مكة - حي العزيزية.')">
+          عرض التفاصيل
+        </button>
+      </div>
+    </article>
+
+    <article class="property" data-type="land"
+      data-name="أرض سكنية الرياض">
+      <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800" alt="أرض">
+      <div class="info">
+        <span class="type">أرض سكنية</span>
+        <h3>أرض سكنية</h3>
+        <p class="location">📍 الرياض - حي الرمال</p>
+        <div class="price">900,000 ريال</div>
+        <button class="details"
+          onclick="showDetails('أرض سكنية','أرض افتراضية مناسبة للتطوير السكني. السعر: 900,000 ريال. الموقع: الرياض - حي الرمال.')">
+          عرض التفاصيل
+        </button>
+      </div>
+    </article>
+
+    <article class="property" data-type="villa"
+      data-name="فيلا عائلية الدمام">
+      <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800" alt="فيلا عائلية">
+      <div class="info">
+        <span class="type">فيلا سكنية</span>
+        <h3>فيلا عائلية</h3>
+        <p class="location">📍 الدمام - حي الشاطئ</p>
+        <div class="price">1,800,000 ريال</div>
+        <button class="details"
+          onclick="showDetails('فيلا عائلية','فيلا عائلية افتراضية بمساحات واسعة. السعر: 1,800,000 ريال. الموقع: الدمام - حي الشاطئ.')">
+          عرض التفاصيل
+        </button>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="empty" id="empty">
+    لا توجد عقارات تطابق بحثك.
+  </div>
+
+</section>
+
+<section class="about" id="about">
+  <h2>عن NEXORA ESTATE</h2>
+  <p>
+    تجربة عقارية رقمية تجمع بين التصميم
+    العصري وسهولة استكشاف العقارات.
+    اكتشف خياراتك وابدأ رحلة البحث عن منزلك.
+  </p>
+</section>
+
+<footer>
+  <div class="logo">NEXORA<span>.</span></div>
+  <p>© 2026 NEXORA ESTATE - جميع الحقوق محفوظة</p>
+  <p>الأسعار والعقارات المعروضة نماذج تجريبية للتصميم.</p>
+</footer>
+
+<dialog id="detailsDialog">
+  <h2 id="dialogTitle"></h2>
+  <p id="dialogText"></p>
+  <button class="close"
+    onclick="document.getElementById('detailsDialog').close()">
+    إغلاق
+  </button>
+</dialog>
+
+<script>
+const cards = document.querySelectorAll('.property');
+const filterButtons = document.querySelectorAll('.filters button');
+const searchInput = document.getElementById('searchInput');
+const empty = document.getElementById('empty');
+
+let currentFilter = 'all';
+
+function updateProperties() {
+  const query = searchInput.value.trim().toLowerCase();
+  let count = 0;
+
+  cards.forEach(card => {
+    const matchesFilter =
+      currentFilter === 'all' ||
+      card.dataset.type === currentFilter;
+
+    const matchesSearch =
+      card.dataset.name.toLowerCase().includes(query);
+
+    const visible = matchesFilter && matchesSearch;
+
+    card.style.display = visible ? 'block' : 'none';
+
+    if (visible) count++;
+  });
+
+  empty.style.display = count === 0 ? 'block' : 'none';
+}
+
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    filterButtons.forEach(b => b.classList.remove('active'));
+
+    button.classList.add('active');
+    currentFilter = button.dataset.filter;
+
+    updateProperties();
+  });
+});
+
+function searchProperties() {
+  updateProperties();
+}
+
+searchInput.addEventListener('input', updateProperties);
+
+function showDetails(title, text) {
+  document.getElementById('dialogTitle').textContent = title;
+  document.getElementById('dialogText').textContent = text;
+  document.getElementById('detailsDialog').showModal();
+}
+</script>
+
+</body>
+</html>

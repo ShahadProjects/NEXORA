@@ -1,0 +1,368 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXORA | Digital Universe</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #080910;
+  --card: #11131e;
+  --purple: #9875ff;
+  --text: #f7f5ff;
+  --muted: #9999ad;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 8%;
+  border-bottom: 1px solid #252536;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+  direction: ltr;
+}
+
+.logo span {
+  color: var(--purple);
+}
+
+nav a {
+  color: #c5c3d1;
+  text-decoration: none;
+  margin: 0 12px;
+  font-size: 14px;
+}
+
+.hero {
+  text-align: center;
+  padding: 105px 20px 75px;
+  background:
+    radial-gradient(ellipse at top, #30205b55, transparent 65%);
+}
+
+.tag {
+  color: #b49cff;
+  border: 1px solid #7958bb;
+  border-radius: 30px;
+  padding: 7px 18px;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.hero h1 {
+  font-size: clamp(35px, 6vw, 65px);
+  margin: 25px 0 12px;
+  line-height: 1.5;
+}
+
+.hero h1 span {
+  color: var(--purple);
+}
+
+.hero p {
+  color: var(--muted);
+  max-width: 600px;
+  margin: auto;
+  line-height: 2;
+}
+
+.explore {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 13px 30px;
+  background: var(--purple);
+  color: white;
+  border-radius: 9px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.projects {
+  padding: 50px 8% 90px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+}
+
+.section-title p {
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 35px;
+}
+
+.filters button {
+  background: #151624;
+  color: white;
+  border: 1px solid #303047;
+  padding: 10px 22px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.filters button.active,
+.filters button:hover {
+  background: var(--purple);
+  border-color: var(--purple);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid #28283a;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--purple);
+  box-shadow: 0 12px 35px #9875ff20;
+}
+
+.card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.category {
+  color: #b49cff;
+  font-size: 12px;
+}
+
+.card h3 {
+  margin: 10px 0;
+  font-size: 21px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 18px;
+  color: #b49cff;
+  text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  border-top: 1px solid #252536;
+  padding: 30px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media(max-width: 800px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 550px) {
+  header {
+    padding: 18px 5%;
+  }
+  nav a {
+    margin: 0 4px;
+    font-size: 11px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .hero {
+    padding-top: 70px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">NEXORA<span>.</span></div>
+  <nav>
+    <a href="#">الرئيسية</a>
+    <a href="#projects">المشاريع</a>
+    <a href="#about">من نحن</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <span class="tag">WELCOME TO NEXORA</span>
+
+  <h1>
+    اكتشف عالماً من<br>
+    <span>الأفكار الرقمية</span>
+  </h1>
+
+  <p>
+    مساحة تجمع الإبداع والتقنية والابتكار.
+    استكشف مجموعة من المواقع والمشاريع الرقمية
+    في عالم العقارات والضيافة والذكاء الاصطناعي.
+  </p>
+
+  <a href="#projects" class="explore">
+    استكشف المشاريع ←
+  </a>
+</section>
+
+<section class="projects" id="projects">
+
+  <div class="section-title">
+    <h2>مشاريعنا الرقمية</h2>
+    <p>اكتشف عوالم مختلفة من الإبداع والتكنولوجيا</p>
+  </div>
+
+  <div class="filters">
+    <button class="active" data-filter="all">الكل</button>
+    <button data-filter="real">العقارات</button>
+    <button data-filter="coffee">الكوفيهات</button>
+    <button data-filter="ai">الذكاء الاصطناعي</button>
+  </div>
+
+  <div class="grid">
+
+    <article class="card" data-category="real">
+      <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800" alt="فيلا">
+      <div class="card-content">
+        <span class="category">REAL ESTATE</span>
+        <h3>دار العقار</h3>
+        <p>منصة عقارية لاستكشاف المنازل والفلل والشقق بأسلوب عصري.</p>
+        <a href="#">اكتشف المشروع ←</a>
+      </div>
+    </article>
+
+    <article class="card" data-category="real">
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800" alt="تصميم عقاري">
+      <div class="card-content">
+        <span class="category">REAL ESTATE</span>
+        <h3>عقارك</h3>
+        <p>تجربة بحث ذكية تساعدك في اكتشاف العقار المناسب.</p>
+        <a href="#">اكتشف المشروع ←</a>
+      </div>
+    </article>
+
+    <article class="card" data-category="coffee">
+      <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=800" alt="كوفي">
+      <div class="card-content">
+        <span class="category">COFFEE</span>
+        <h3>Brew House</h3>
+        <p>وجهة لعشاق القهوة والمذاقات المميزة.</p>
+        <a href="#">اكتشف المشروع ←</a>
+      </div>
+    </article>
+
+    <article class="card" data-category="coffee">
+      <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800" alt="قهوة">
+      <div class="card-content">
+        <span class="category">COFFEE</span>
+        <h3>Coffee Corner</h3>
+        <p>منصة أنيقة لاستعراض المشروبات وطلبات القهوة.</p>
+        <a href="#">اكتشف المشروع ←</a>
+      </div>
+    </article>
+
+    <article class="card" data-category="ai">
+      <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800" alt="ذكاء اصطناعي">
+      <div class="card-content">
+        <span class="category">ARTIFICIAL INTELLIGENCE</span>
+        <h3>AI Assistant</h3>
+        <p>مساعد ذكي يقدم تجربة تفاعلية للإجابة عن الأسئلة.</p>
+        <a href="#">اكتشف المشروع ←</a>
+      </div>
+    </article>
+
+    <article class="card" data-category="ai">
+      <img src="https://images.unsplash.com/photo-1675557009875-436f8e3f5c1a?w=800" alt="تقنية">
+      <div class="card-content">
+        <span class="category">ARTIFICIAL INTELLIGENCE</span>
+        <h3>AI Academy</h3>
+        <p>منصة تعليمية لاكتشاف مفاهيم الذكاء الاصطناعي.</p>
+        <a href="#">اكتشف المشروع ←</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<footer id="about">
+  <div class="logo">NEXORA<span>.</span></div>
+  <p>نحو مستقبل رقمي أكثر إبداعاً.</p>
+  <p>© 2026 NEXORA. All Rights Reserved.</p>
+</footer>
+
+<script>
+const buttons = document.querySelectorAll('.filters button');
+const cards = document.querySelectorAll('.card');
+
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+
+    buttons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+
+    const filter = button.dataset.filter;
+
+    cards.forEach(card => {
+      if (filter === 'all' || card.dataset.category === filter) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+  });
+});
+</script>
+
+</body>
+</html>
